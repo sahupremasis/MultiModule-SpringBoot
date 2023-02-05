@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    initialization-mode: always
+    url: jdbc:postgresql://localhost:5432/spring-boot-test?currentSchema=pg1
+    username: postgres
+    password: Welcome
+
+#    platform: postgres
+
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          lob.non_contextual_creation: true
+        show_sql: 'true'
+
+  main:
+    banner-mode: 'off'
+#  jpa:
+#    properties:
+#      hibernate:
+#        default_schema: pg1
+#        jdbc:
+#          lob:
+#            non_contextual_creation: 'true'
+#    hibernate:
+#      ddl-auto: none
+#      hbm2ddl:
+#        auto: update
+#      dialect: org.hibernate.dialect.PostgreSQLDialect
+#      show_sql: 'true'

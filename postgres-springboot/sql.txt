@@ -1,0 +1,28 @@
+
+INSERT INTO pg1.person(
+	id, name, address, created_on)
+	VALUES (6, 'Rex', 'Address of Rex', TO_TIMESTAMP('2019-03-31 00:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO pg1.person(
+	id, name, address, created_on)
+	VALUES (6, 'Jack', 'Address of Jack', current_timestamp));
+
+
+
+SELECT * FROM pg1.person
+
+
+select name, to_char(created_on, 'yyyymmdd hh:mi:ss') as created_on from pg1.person;
+
+CREATE TABLE IF NOT EXISTS pg1.person
+(
+    id numeric(30,0) NOT NULL,
+    name character varying(30) COLLATE pg_catalog."default",
+    address character varying(200) COLLATE pg_catalog."default",
+    created_on timestamp without time zone NOT NULL
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS pg1.person
+    OWNER to postgres;
